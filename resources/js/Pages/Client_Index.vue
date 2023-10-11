@@ -22,17 +22,14 @@ const { clients } = defineProps(['clients']);
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">
-
-                        <!-- Client Loop -->
-                        <ul>
-                            <li v-for="client in clients" :key="client.id">
-                                <!-- Display client information here -->
-                                <h3>{{ client.last_name }}</h3>
+                    <div class="p-6 text-gray-900" style="display: flex; flex-wrap: wrap;">
+                        <div v-for="client in clients" :key="client.id">
+                            <div class="m-5 shadow-md rounded-md p-6" style="width: 500px;">
+                                <h3><b>Name:</b>{{ client.last_name }}</h3>
                                 <p>{{ client.first_name }}</p>
-                                <!-- Add other client properties as needed -->
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
