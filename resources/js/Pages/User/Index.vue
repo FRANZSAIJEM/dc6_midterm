@@ -5,28 +5,30 @@ import { Head } from '@inertiajs/vue3';
 import { defineProps } from 'vue';
 
 
-const { clients } = defineProps(['clients']);
+const { users } = defineProps(['users']);
 
 
 
 </script>
 
 <template>
-    <Head title="Client" />
+    <Head title="user" />
 
     <AuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Client</h2>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">Users</h2>
         </template>
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900" style="display: flex; flex-wrap: wrap;">
-                        <div v-for="client in clients" :key="client.id">
+                        <div v-for="user in users" :key="user.id">
                             <div class="m-5 shadow-md rounded-md p-6" style="width: 500px;">
-                                <h3><b>Name:</b>{{ client.last_name }}</h3>
-                                <p>{{ client.first_name }}</p>
+                                <p><b>Name: </b>{{ user.name }}</p>
+                                <p><b>Email: </b>{{ user.email }}</p>
+
+
                             </div>
                         </div>
 

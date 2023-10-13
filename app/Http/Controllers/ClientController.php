@@ -12,9 +12,11 @@ class ClientController extends Controller
     {
         $clients = Client::get();
 
-        return Inertia::render('Client_Index', [
+        return Inertia::render('Client/Index', [
             'clients' => $clients,
         ]);
+
+
     }
 }
 
